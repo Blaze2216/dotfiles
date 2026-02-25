@@ -1,0 +1,60 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "source": "/home/blaze/.config/fastfetch/noctra.txt",
+        "color": {
+            "1": "#d2bcfd",
+            "2": "#f0b7c6"
+        },
+        "padding": {
+            "top": 2,
+            "right": 4
+        }
+    },
+    "display": {
+        "separator": " ➜  ",
+        "color": {
+            "keys": "#d2bcfd",
+            "title": "#f0b7c6"
+        }
+    },
+    "modules": [
+        "title",
+        "separator",
+        {
+            "type": "os",
+            "key": "󰣇 OS ",
+            "keyColor": "#d2bcfd"
+        },
+        {
+            "type": "kernel",
+            "key": "󰌢 KER",
+            "keyColor": "#cdc2db"
+        },
+        {
+            "type": "wm",
+            "key": " WM ",
+            "keyColor": "#f0b7c6"
+        },
+        {
+            "type": "terminal",
+            "key": " TRM",
+            "keyColor": "#d2bcfd"
+        },
+        {
+            "type": "cpu",
+            "key": " CPU",
+            "keyColor": "#cdc2db"
+        },
+        {
+            "type": "memory",
+            "key": "󰍛 MEM",
+            "keyColor": "#f0b7c6"
+        },
+        "break",
+        {
+            "type": "colors",
+            "symbol": "circle"
+        }
+    ]
+}

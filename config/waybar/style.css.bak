@@ -1,0 +1,105 @@
+@import 'colors.css';
+
+* {
+    border: none;
+    border-radius: 0px;
+    font-family: "Fira Code", "FiraCode Nerd Font", sans-serif;
+    font-weight: bold;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+tooltip {
+    background: @surface;
+    border: 1px solid @outline_variant;
+    border-radius: 12px;
+}
+
+tooltip label {
+    color: @on_surface;
+    padding: 6px;
+}
+
+/* =========================
+   Workspaces (Pill Style)
+   ========================= */
+
+#workspaces {
+    background-color: @surface;
+    padding: 5px 3px;
+    margin: 6px 0 0 12px; /* Added slight top margin for "floating" look */
+    border-radius: 18px;
+    border: 1px solid @outline;
+}
+
+#workspaces button {
+    padding: 0px 6px;
+    margin: 0px 3px;
+    border-radius: 50px;
+    color: transparent;
+    background-color: @secondary_container;
+    transition: all 0.3s cubic-bezier(.05,.9,.1,1.05);
+}
+
+#workspaces button.active {
+    background-color: @primary;
+    color: @on_primary;
+    min-width: 30px;
+    font-size: 13px;
+}
+
+#workspaces button:hover {
+    background-color: @tertiary;
+    color: @on_tertiary;
+    border-radius: 16px;
+    min-width: 50px;
+}
+
+#workspaces button.urgent {
+    background-color: @error;
+    color: @on_error;
+    border-radius: 16px;
+    min-width: 50px;
+}
+
+/* =========================
+   Modules (Material Tones)
+   ========================= */
+
+#battery,
+#pulseaudio,
+#network,
+#clock,
+#custom-notification {
+    background-color: @surface;
+    padding: 0 15px;
+    margin: 6px 0 0 12px;
+    border-radius: 50px;
+    border: 1px solid @outline;
+}
+
+#custom-notification {
+    color: @primary;
+    margin: 0 12px 0 12px;
+}
+
+#pulseaudio {
+    color: @secondary;
+}
+
+#network {
+    color: @tertiary;
+}
+
+#battery {
+    color: @primary_fixed; /* Good for visibility on AMD screens */
+}
+
+#clock {
+    color: @primary;
+}

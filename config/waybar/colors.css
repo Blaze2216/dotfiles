@@ -1,0 +1,24 @@
+/* =========================================================
+   Noctra OS — Matugen Color Map (Material You)
+   ========================================================= */
+
+@define-color primary #d2bcfd;
+@define-color on_primary #38265c;
+
+@define-color secondary #cdc2db;
+@define-color secondary_container #4b4358;
+
+@define-color tertiary #f0b7c6;
+@define-color on_tertiary #4a2530;
+
+@define-color surface #141218;
+@define-color on_surface #e7e0e8;
+
+@define-color outline #948f99;
+@define-color outline_variant #49454e;
+
+@define-color error #ffb4ab;
+@define-color on_error #690005;
+
+/* Fixed colors for better visibility on Radeon displays */
+@define-color primary_fixed #eaddff;

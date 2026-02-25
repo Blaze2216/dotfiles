@@ -1,0 +1,4 @@
+.zsh_history
+.cache/
+node_modules/
+target/
