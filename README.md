@@ -53,3 +53,4 @@ This configuration moves away from a monolithic setup into a highly maintainable
 | **Toggle Floating** | SUPER + V |
 | **Reload Waybar** | SUPER + R | 
 | **Open Browser** | SUPER + B |
+| **Screenshot | PrtSc |
