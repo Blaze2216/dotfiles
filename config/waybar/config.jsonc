@@ -1,24 +1,22 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 34,
-    "margin-top": 8,
+    "margin-top": 0,
     "margin-bottom": 0,
-    "spacing": 4,
-    "modules-left": [
-        "hyprland/workspaces"
-    ],
+    "modules-left": [],
     "modules-center": [
-        "clock"
-    ],
-    "modules-right": [
+        "hyprland/workspaces",
+        "clock",
         "pulseaudio",
         "network",
         "battery",
-        "tray"
+        "tray",
+        "custom/notification"
     ],
+    "modules-right": [],
+
     "hyprland/workspaces": {
-        "format": "{name}",
+        "format": "{icon}",
         "on-click": "activate"
     },
     "clock": {
@@ -27,40 +25,29 @@
     },
     "pulseaudio": {
         "format": "{icon}",
-        "format-icons": [
-            "󰕿",
-            "󰖀",
-            "󰕾"
-        ]
+        "format-icons": ["󰕿", "󰖀", "󰕾"]
+    },
+    "custom/notification": {
+        "tooltip": false,
+        "format": "",
+        "on-click": "swaync-client -t -sw",
+        "escape": true
     },
     "network": {
-        "format-wifi": "󰤨 ", // This adds the Wi-Fi name next to the icon
+        "format-wifi": "󰤨 ", 
         "format-ethernet": "󰈀 {ifname}",
         "format-linked": "󰈀 {ifname} (No IP)",
         "format-disconnected": "󰤭 Disconnected",
-        "tooltip-format": "{essid}",
-        // "on-click": "nm-connection-editor" // Optional: opens your network settings on click
+        "tooltip-format": "{essid}"
     },
     "battery": {
         "states": {
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon} {capacity}%", // This adds the percentage next to the icon
+        "format": "{icon} {capacity}%",
         "format-charging": "󰂄 {capacity}%",
         "format-plugged": " {capacity}%",
-        "format-icons": [
-            "󰂎",
-            "󰁺",
-            "󰁻",
-            "󰁼",
-            "󰁽",
-            "󰁾",
-            "󰁿",
-            "󰂀",
-            "󰂁",
-            "󰂂",
-            "󰁹"
-        ]
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
     }
 }

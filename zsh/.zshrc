@@ -71,11 +71,9 @@ alias wall='matugen image' # Usage: wall /path/to/img.png
 alias refresh='pkill -USR2 waybar'
 
 # General
-alias ls='exa --icons --group-directories-first'
-alias ll='exa -lah --icons'
+alias ls='eza --icons --group-directories-first'
+alias ll='eza -lah --icons'
 alias v='nvim'
-alias rust='cd ~/noctra-os/core/rust_projects' # Quick jump to your Rust work
-alias hostel='cat ~/Documents/hostel_accounting.txt' # Quick check for your ITM accounting
 
 # 8. NVM (Node Version Manager)
 export NVM_DIR="$HOME/.nvm"

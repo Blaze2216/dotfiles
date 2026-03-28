@@ -3,8 +3,8 @@
     "logo": {
         "source": "/home/blaze/.config/fastfetch/noctra.txt",
         "color": {
-            "1": "#d2bcfd",
-            "2": "#f0b7c6"
+            "1": "#acc7ff",
+            "2": "#debcdf"
         },
         "padding": {
             "top": 2,
@@ -14,8 +14,8 @@
     "display": {
         "separator": " ➜  ",
         "color": {
-            "keys": "#d2bcfd",
-            "title": "#f0b7c6"
+            "keys": "#acc7ff",
+            "title": "#debcdf"
         }
     },
     "modules": [
@@ -24,32 +24,32 @@
         {
             "type": "os",
             "key": "󰣇 OS ",
-            "keyColor": "#d2bcfd"
+            "keyColor": "#acc7ff"
         },
         {
             "type": "kernel",
             "key": "󰌢 KER",
-            "keyColor": "#cdc2db"
+            "keyColor": "#bec6dc"
         },
         {
             "type": "wm",
             "key": " WM ",
-            "keyColor": "#f0b7c6"
+            "keyColor": "#debcdf"
         },
         {
             "type": "terminal",
             "key": " TRM",
-            "keyColor": "#d2bcfd"
+            "keyColor": "#acc7ff"
         },
         {
             "type": "cpu",
             "key": " CPU",
-            "keyColor": "#cdc2db"
+            "keyColor": "#bec6dc"
         },
         {
             "type": "memory",
             "key": "󰍛 MEM",
-            "keyColor": "#f0b7c6"
+            "keyColor": "#debcdf"
         },
         "break",
         {
