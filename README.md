@@ -2,8 +2,9 @@
 
 A high-performance, modular desktop configuration built on Arch Linux and Hyprland. Designed for a dark, minimalist aesthetic with a focus on system efficiency and keyboard-driven workflow.
 
-![Desktop Preview](path/to/your/screenshot.png) 
-*(Note: Replace this link with an actual screenshot of your desktop)*
+![Desktop Preview](https://github.com/Blaze2216/dotfiles/blob/main/assets/2026-03-28_13-03-1774686420.png?raw=true) 
+
+![Desktop Preview](https://github.com/Blaze2216/dotfiles/blob/main/assets/2026-03-28_13-03-1774686478.png?raw=true)
 
 ## 🛠️ Tech Stack & Specs
 
