@@ -1,8 +1,13 @@
 {
     "layer": "top",
     "position": "top",
+    "height": 38,
     "margin-top": 0,
     "margin-bottom": 0,
+    "margin-left": 10,
+    "margin-right": 10,
+    "spacing": 4,
+
     "modules-left": [],
     "modules-center": [
         "hyprland/workspaces",
@@ -16,30 +21,51 @@
     "modules-right": [],
 
     "hyprland/workspaces": {
-        "format": "{icon}",
-        "on-click": "activate"
+    "format": "{icon}",
+    "on-click": "activate",
+    "persistent-workspaces": {
+        "*": 4
     },
+    "disable-scroll": false,
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+
+    /* === Anti-jitter / smoother options === */
+    "active-only": false,          // show all workspaces (helps stability)
+    "all-outputs": false,          // important if you have one monitor
+    "sort-by-number": true,        // prevents random reordering
+    "format-icons": {
+        "1": "1",
+        "2": "2",
+        "3": "3",
+        "4": "4",
+        "default": "󰊠"
+    }
+},
+
     "clock": {
         "format": " {:%b %d, %I:%M %p} ",
-        "tooltip-format": "<tt><small>{calendar}</small></tt>"
+        "format-alt": " {:%A, %d %B %Y | %H:%M:%S} ",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "on-click": "mode"   // toggles between normal and alt format
     },
+
     "pulseaudio": {
-        "format": "{icon}",
-        "format-icons": ["󰕿", "󰖀", "󰕾"]
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟 Muted",
+        "format-icons": ["󰕿", "󰖀", "󰕾"],
+        "on-click": "pavucontrol",
+        "tooltip": true
     },
-    "custom/notification": {
-        "tooltip": false,
-        "format": "",
-        "on-click": "swaync-client -t -sw",
-        "escape": true
-    },
+
     "network": {
-        "format-wifi": "󰤨 ", 
+        "format-wifi": "󰤨 {essid} {signalStrength}%",
         "format-ethernet": "󰈀 {ifname}",
         "format-linked": "󰈀 {ifname} (No IP)",
         "format-disconnected": "󰤭 Disconnected",
-        "tooltip-format": "{essid}"
+        "tooltip-format": "{ifname} via {gwaddr}\n{essid} {signalStrength}%"
     },
+
     "battery": {
         "states": {
             "warning": 30,
@@ -49,5 +75,19 @@
         "format-charging": "󰂄 {capacity}%",
         "format-plugged": " {capacity}%",
         "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 8,
+        "show-passive-items": true
+    },
+
+    "custom/notification": {
+        "tooltip": false,
+        "format": "",
+        "on-click": "swaync-client -t -sw",
+        "escape": true,
+        "return-type": "json"   // future-proof if you want dynamic count later
     }
 }

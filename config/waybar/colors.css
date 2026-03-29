@@ -7,34 +7,34 @@
 
 /* ── Color tokens from Matugen ─────────────────────────── */
 
-@define-color primary                 {{colors.primary.default.hex}};
-@define-color on_primary              {{colors.on_primary.default.hex}};
-@define-color primary_container       {{colors.primary_container.default.hex}};
-@define-color on_primary_container    {{colors.on_primary_container.default.hex}};
-@define-color primary_fixed           {{colors.primary_fixed.default.hex}};
+@define-color primary                 #ffb4a9;
+@define-color on_primary              #561e17;
+@define-color primary_container       #73342b;
+@define-color on_primary_container    #ffdad5;
+@define-color primary_fixed           #ffdad5;
 
-@define-color secondary               {{colors.secondary.default.hex}};
-@define-color on_secondary            {{colors.on_secondary.default.hex}};
-@define-color secondary_container     {{colors.secondary_container.default.hex}};
-@define-color on_secondary_container  {{colors.on_secondary_container.default.hex}};
+@define-color secondary               #e7bdb6;
+@define-color on_secondary            #442926;
+@define-color secondary_container     #5d3f3b;
+@define-color on_secondary_container  #ffdad5;
 
-@define-color tertiary                {{colors.tertiary.default.hex}};
-@define-color on_tertiary             {{colors.on_tertiary.default.hex}};
-@define-color tertiary_container      {{colors.tertiary_container.default.hex}};
-@define-color on_tertiary_container   {{colors.on_tertiary_container.default.hex}};
+@define-color tertiary                #dec38c;
+@define-color on_tertiary             #3e2e04;
+@define-color tertiary_container      #574419;
+@define-color on_tertiary_container   #fcdfa6;
 
-@define-color surface                 {{colors.surface.default.hex}};
-@define-color on_surface              {{colors.on_surface.default.hex}};
-@define-color surface_variant         {{colors.surface_variant.default.hex}};
-@define-color on_surface_variant      {{colors.on_surface_variant.default.hex}};
+@define-color surface                 #1a1110;
+@define-color on_surface              #f1dedc;
+@define-color surface_variant         #534341;
+@define-color on_surface_variant      #d8c2be;
 
-@define-color outline                 {{colors.outline.default.hex}};
-@define-color outline_variant         {{colors.outline_variant.default.hex}};
+@define-color outline                 #a08c89;
+@define-color outline_variant         #534341;
 
-@define-color error                   {{colors.error.default.hex}};
-@define-color on_error                {{colors.on_error.default.hex}};
-@define-color error_container         {{colors.error_container.default.hex}};
-@define-color on_error_container      {{colors.on_error_container.default.hex}};
+@define-color error                   #ffb4ab;
+@define-color on_error                #690005;
+@define-color error_container         #93000a;
+@define-color on_error_container      #ffdad6;
 
 /* ── Global reset ──────────────────────────────────────── */
 
