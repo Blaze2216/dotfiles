@@ -1,0 +1,129 @@
+/* =========================================================
+   Noctra OS — SwayNC Dynamic Theme
+   Synced with Matugen & Hyprland Rounding
+   ========================================================= */
+@import '../waybar/colors.css'; /* Ensure Matugen outputs here, or change path to waybar/colors.css */
+
+* {
+  all: unset;
+  font-family: "JetBrainsMono Nerd Font Propo", monospace;
+  font-size: 13px;
+  /* Matches your snappy Hyprland bezier */
+  transition: all 0.2s cubic-bezier(0.1, 0.9, 0.1, 1.05); 
+}
+
+/* ── Main Panel ── */
+.control-center {
+  background: alpha(@surface, 0.95);
+  border: 1px solid @outline_variant;
+  border-radius: 10px; /* Synced to Hyprland */
+  padding: 16px;
+  color: @on_surface;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* ── Header ── */
+.widget-title {
+  color: @primary;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.widget-title button {
+  background: @surface_variant;
+  color: @on_surface_variant;
+  border-radius: 10px;
+  padding: 6px 12px;
+}
+
+.widget-title button:hover {
+  background: @primary;
+  color: @on_primary;
+}
+
+/* ── Do Not Disturb ── */
+.widget-dnd {
+  background: @surface_variant;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 12px;
+  color: @on_surface;
+}
+
+.widget-dnd > switch {
+  border-radius: 10px;
+  background: @outline;
+}
+
+.widget-dnd > switch:checked {
+  background: @primary;
+}
+
+/* ── Media Player ── */
+.widget-mpris {
+  background: @surface_variant;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+/* ── Sliders (Volume/Backlight) ── */
+.widget-volume, .widget-backlight {
+  background: @surface_variant;
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin-bottom: 12px;
+}
+
+scale trough {
+  background: @outline_variant;
+  border-radius: 10px;
+  min-height: 4px;
+}
+
+scale highlight {
+  background: @primary;
+  border-radius: 10px;
+}
+
+scale slider {
+  background: @primary;
+  border-radius: 10px;
+  min-width: 14px;
+  min-height: 14px;
+  margin: -5px;
+}
+
+/* ── Notifications ── */
+.notification-row {
+  margin-bottom: 8px;
+}
+
+.notification-background {
+  background: @surface_variant;
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.notification-content .summary {
+  color: @primary;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.notification-content .body {
+  color: @on_surface_variant;
+}
+
+/* Close Button on Notifications */
+.close-button {
+  background: transparent;
+  color: @on_surface_variant;
+  border-radius: 10px;
+}
+
+.close-button:hover {
+  background: @error;
+  color: @on_error;
+}

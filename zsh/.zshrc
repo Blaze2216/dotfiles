@@ -1,11 +1,10 @@
 # ┌─────────────────────────────────────────────────────────────┐
 # │                    ~/.zshrc - Noctra OS                     │
-# │             The All-Rounder's Cockpit - Feb 2026            │
 # └─────────────────────────────────────────────────────────────┘
 
 # 1. Environment & Paths
-export PATH="$HOME/bin:/usr/local/bin:$HOME/.cargo/bin:$PATH" # Added Cargo for your Rust dev
-export EDITOR="nvim" # Because you're a 5-year Linux veteran
+export PATH="$HOME/bin:/usr/local/bin:$HOME/.cargo/bin:$PATH"
+export EDITOR="nvim"
 
 # 2. History Settings
 export HISTFILE="$HOME/.zsh_history"
@@ -17,7 +16,7 @@ setopt HIST_IGNORE_SPACE
 setopt HIST_SAVE_NO_DUPS
 setopt SHARE_HISTORY
 
-# 3. Completion System (Arch optimized)
+# 3. Completion System
 autoload -Uz compinit
 if [[ -n ${ZDOTDIR:-$HOME}/.zcompdump(#qN.mh+24) ]]; then
     compinit
@@ -32,50 +31,51 @@ zstyle ':completion:*:descriptions' format '%B%d%b'
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.cache/zcompcache
 
-# 4. Plugins (Arch Paths)
-# Note: On Arch, these are usually in /usr/share/zsh/plugins/
-# --- Noctra Syntax Highlighting ---
-# Define styles BEFORE sourcing
-typeset -A ZSH_HIGHLIGHT_STYLES
-ZSH_HIGHLIGHT_STYLES[command]='fg=#33ccff,bold'       # Noctra Blue
-ZSH_HIGHLIGHT_STYLES[alias]='fg=#bb9af7,bold'         # Noctra Purple
-ZSH_HIGHLIGHT_STYLES[path]='fg=white,underline'
-ZSH_HIGHLIGHT_STYLES[error]='fg=#f7768e,bold'         # Material Red
-
-# Source from the Arch-specific directory
-if [[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
-    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-fi
-
-# Source Autosuggestions
-if [[ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
-    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-fi
-
-# 5. The "Noctra" Identity (Fastfetch)
+# 4. The "Noctra" Identity
+# Moved up so it executes before plugins to keep prompt rendering instantaneous
 if [[ -o interactive ]]; then
-    # Runs your dynamic Matugen-themed Fastfetch on every new terminal
-    fastfetch --config /home/blaze/.config/fastfetch/config.jsonc
+    fastfetch --config $HOME/.config/fastfetch/config.jsonc
 fi
 
-# 6. Prompt - Starship (Rust-powered)
+# 5. Prompt - Starship
 eval "$(starship init zsh)"
 
-# 7. Aliases (Noctra Efficiency)
-# Package management
+# 6. Aliases
 alias update='sudo pacman -Syu'
 alias install='sudo pacman -S'
-
-# Branding & Theming
-alias wall='matugen image' # Usage: wall /path/to/img.png
+alias wall='matugen image'
 alias refresh='pkill -USR2 waybar'
-
-# General
 alias ls='eza --icons --group-directories-first'
 alias ll='eza -lah --icons'
 alias v='nvim'
 
-# 8. NVM (Node Version Manager)
+# 7. Lazy-Loaded NVM (Performance Tweak)
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-export PATH="$HOME/.cargo/bin:$PATH"
+zsh_lazy_load_nvm() {
+    unset -f nvm node npm npx yarn
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+}
+nvm()  { zsh_lazy_load_nvm; nvm "$@"; }
+node() { zsh_lazy_load_nvm; node "$@"; }
+npm()  { zsh_lazy_load_nvm; npm "$@"; }
+npx()  { zsh_lazy_load_nvm; npx "$@"; }
+yarn() { zsh_lazy_load_nvm; yarn "$@"; }
+
+# 8. Plugins (ORDER IS CRITICAL)
+# Source Autosuggestions FIRST
+if [[ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
+    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
+
+# Source Syntax Highlighting LAST
+if [[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
+    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+
+# Define styles AFTER sourcing, using Kitty's dynamic Matugen ANSI palette
+typeset -A ZSH_HIGHLIGHT_STYLES
+ZSH_HIGHLIGHT_STYLES[command]='fg=4,bold'       # Uses Matugen Primary Container
+ZSH_HIGHLIGHT_STYLES[alias]='fg=5,bold'         # Uses Matugen Secondary
+ZSH_HIGHLIGHT_STYLES[path]='fg=7,underline'     # Uses Matugen On-Surface
+ZSH_HIGHLIGHT_STYLES[error]='fg=1,bold'         # Uses Matugen Error
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"          # Uses Matugen Surface-Variant
