@@ -1,56 +1,275 @@
-# 🌌 Noctra OS | Hyprland Dotfiles
+<div align="center">
 
-A high-performance, modular desktop configuration built on Arch Linux and Hyprland. Designed for a dark, minimalist aesthetic with a focus on system efficiency and keyboard-driven workflow.
-
-![Desktop Preview](https://github.com/Blaze2216/dotfiles/blob/main/assets/2026-03-28_13-03-1774686420.png?raw=true) 
-
-![Desktop Preview](https://github.com/Blaze2216/dotfiles/blob/main/assets/2026-03-28_13-03-1774686478.png?raw=true)
-
-## 🛠️ Tech Stack & Specs
-
-| Component | Choice | Description |
-| :--- | :--- | :--- |
-| **OS** | Arch Linux | Minimal base installation |
-| **WM** | Hyprland (Wayland) | Dynamic tiling window manager |
-| **Bar** | Waybar | Custom "notch" design with targeted blur removal |
-| **Terminal** | Kitty | GPU-accelerated terminal emulator |
-| **Wallpaper** | awww | Wayland wallpaper daemon for smooth transitions |
-| **Hardware** | AMD Ryzen 5 | Optimized for integrated Radeon graphics |
-
-## 🏗️ Architecture & Features
-
-This configuration moves away from a monolithic setup into a highly maintainable, modular structure:
-
-* **Modular Hyprland Config:** Core settings are kept clean by extracting system logic into separate files:
-  * `monitors.conf`: Handles display outputs and scaling.
-  * `keybindings.conf`: Centralized shortcut management.
-* **Refined UI:** Waybar is styled as a clean top-notch rather than a floating pill, stripping out unnecessary background blur to maximize performance and visual clarity.
-* **Modern Wayland Daemons:** Utilizes `awww` (formerly swww) for reliable layer-shell wallpaper rendering without caching bugs.
-
-## 📂 Directory Structure
-
-```text
-~/.config/
-├── hypr/
-│   ├── hyprland.conf       # Main entry point
-│   ├── monitors.conf       # Display configuration
-│   └── keybindings.conf    # Shortcuts and dispatchers
-├── waybar/
-│   ├── config.jsonc        # Notch layout structure
-│   └── style.css           # Styling and blur rules
-├── kitty/
-│   └── kitty.conf          # Terminal aesthetics
-└── rofi/                   # Application launcher
+```
+███╗   ██╗ ██████╗  ██████╗████████╗██████╗  █████╗      ██████╗ ███████╗
+████╗  ██║██╔═══██╗██╔════╝╚══██╔══╝██╔══██╗██╔══██╗    ██╔═══██╗██╔════╝
+██╔██╗ ██║██║   ██║██║        ██║   ██████╔╝███████║    ██║   ██║███████╗
+██║╚██╗██║██║   ██║██║        ██║   ██╔══██╗██╔══██║    ██║   ██║╚════██║
+██║ ╚████║╚██████╔╝╚██████╗   ██║   ██║  ██║██║  ██║    ╚██████╔╝███████║
+╚═╝  ╚═══╝ ╚═════╝  ╚═════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝     ╚═════╝ ╚══════╝
 ```
 
-## ⚡ Keybindings
+### *A dark, modular Hyprland desktop for the obsessive minimalist*
+
+<br>
+
+![Arch Linux](https://img.shields.io/badge/Arch_Linux-1793D1?style=for-the-badge&logo=arch-linux&logoColor=white)
+![Hyprland](https://img.shields.io/badge/Hyprland-58E1FF?style=for-the-badge&logo=wayland&logoColor=black)
+![Wayland](https://img.shields.io/badge/Wayland-FFAC45?style=for-the-badge&logo=wayland&logoColor=black)
+![License](https://img.shields.io/badge/License-MIT-A277FF?style=for-the-badge)
+
+<br>
+
+![Desktop Preview](.github/assets/preview-1.png)
+
+<br>
+
+</div>
+
+---
+
+## ✦ Overview
+
+**Noctra OS** is a fully modular, performance-tuned Hyprland configuration built on Arch Linux. It's designed around a single philosophy: *everything that touches the screen should be intentional.*
+
+The result is a clean dark desktop that stays out of your way — with a Dynamic Island-style Waybar notch, a Material You color system driven by your wallpaper via Matugen, and a shell that loads in milliseconds.
+
+<br>
+
+## 🖼️ Screenshots
+
+<div align="center">
+
+| Desktop | Notification Center |
+|:---:|:---:|
+| ![Preview 1](assets/2026-03-28_13-03-1774686420.png) | ![Preview 2](assets/2026-03-28_13-03-1774686478.png) |
+
+</div>
+
+<br>
+
+## ⚙️ Tech Stack
+
+| Component | Tool | Notes |
+|:---|:---|:---|
+| **OS** | [Arch Linux](https://archlinux.org) | Rolling release, minimal base |
+| **Window Manager** | [Hyprland](https://hyprland.org) | Dynamic tiling, Wayland-native |
+| **Bar** | [Waybar](https://github.com/Alexays/Waybar) | Custom Dynamic Island notch |
+| **Notifications** | [SwayNC](https://github.com/ErikReider/SwayNotificationCenter) | Control center + notification daemon |
+| **Terminal** | [Kitty](https://sw.kovidgoyal.net/kitty/) | GPU-accelerated, ligature support |
+| **Shell** | [Zsh](https://www.zsh.org) + [Starship](https://starship.rs) | Fast, lazy-loaded plugins |
+| **App Launcher** | [Rofi](https://github.com/davatorium/rofi) | Multi-style launcher themes |
+| **Wallpaper** | [awww](https://github.com/helix-editor/helix) (formerly swww) | Smooth animated transitions |
+| **Color Engine** | [Matugen](https://github.com/InioX/matugen) | Material You wallpaper-driven theming |
+| **File Manager** | [Thunar](https://wiki.archlinux.org/title/Thunar) | Lightweight GTK file manager |
+| **System Monitor** | [btop](https://github.com/aristocratos/btop) | Resource monitor, custom themed |
+| **Audio Visualizer** | [cava](https://github.com/karlstav/cava) | Terminal-based spectrum analyzer |
+| **Fetch** | [fastfetch](https://github.com/fastfetch-cli/fastfetch) | System info on shell launch |
+| **OSD** | [swayosd](https://github.com/ErikReider/SwayOSD) | On-screen volume/brightness display |
+| **Hardware** | AMD Ryzen 5 (iGPU) | All settings tuned for integrated graphics |
+
+<br>
+
+## ✨ Features
+
+### 🏝️ Dynamic Island Waybar
+The bar is styled as a notch that drops from the top edge of the screen — no floating pills, no side panels. Everything lives in a single center module group with a `border-radius: 0 0 25px 25px` hanging shape. Jitter-free workspace buttons use a fixed `min-width` to prevent layout shifts.
+
+### 🎨 Full Material You Theming with Matugen
+Every application — Waybar, SwayNC, Kitty, Hyprland borders, Rofi, btop, cava, fastfetch — is themed from a single source of truth: your wallpaper. Running `matugen image <wallpaper>` regenerates all color files simultaneously. No manual hex-editing, ever.
+
+```
+Wallpaper → Matugen → colors.css / colors.conf → All Apps
+```
+
+### 🧩 Modular Hyprland Config
+The main `hyprland.conf` is purely a source manifest. Each concern lives in its own file:
+
+```
+hypr/
+├── hyprland.conf     # Entry point — sources only
+├── look.conf         # Gaps, borders, blur, shadows, rounding
+├── animation.conf    # Bezier curves and animation speeds
+├── keybindings.conf  # All binds in one place
+├── autostart.conf    # exec-once daemons
+├── env.conf          # Wayland/Qt/SDL environment vars
+├── input.conf        # Keyboard, touchpad, gestures
+├── layout.conf       # Master/dwindle layout settings
+├── misc.conf         # VFR, DPMS, logo suppression
+├── monitors.conf     # Display resolution and scaling
+├── rules.conf        # Window rules
+└── colors.conf       # Auto-generated by Matugen — do not edit
+```
+
+### ⚡ Performance-First Shell
+The `.zshrc` is built for speed:
+- **Lazy NVM loading** — `nvm`, `node`, `npm`, `npx`, and `yarn` are stubs that bootstrap the real NVM only on first use
+- **Cached completions** — `compinit` only re-runs if `.zcompdump` is older than 24 hours
+- **Plugin order enforced** — autosuggestions before syntax highlighting (required for correct render)
+- **Matugen-aware highlights** — `zsh-syntax-highlighting` uses Kitty's ANSI palette, which Matugen has already set from your wallpaper
+
+<br>
+
+## 📦 Dependencies
+
+### Core (required)
+```bash
+# Wayland / Hyprland
+hyprland waybar swaync swayosd awww hyprlock hypridle
+
+# Terminal & Shell
+kitty zsh starship
+
+# Launcher & Tools
+rofi-wayland grim slurp thunar polkit-gnome
+
+# Theming
+matugen ttf-jetbrains-mono-nerd
+
+# System
+btop cava fastfetch playerctl brightnessctl
+```
+
+### AUR packages
+```bash
+# Using paru or yay
+paru -S matugen-bin awww-git swayosd-git
+```
+
+<br>
+
+## 🚀 Installation
+
+> ⚠️ **Back up your existing `~/.config` before proceeding.**
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/Blaze2216/dotfiles.git ~/dotfiles
+
+# 2. Copy configs
+cp -r ~/dotfiles/.config/* ~/.config/
+cp ~/dotfiles/zsh/.zshrc ~/.zshrc
+
+# 3. Install dependencies (Arch)
+sudo pacman -S hyprland waybar swaync kitty zsh starship \
+  rofi-wayland grim thunar btop cava fastfetch playerctl brightnessctl
+
+# 4. Install AUR packages
+paru -S matugen-bin awww-git swayosd-git
+
+# 5. Set your wallpaper and generate colors
+matugen image ~/Pictures/wallpapers/your-wallpaper.jpg
+
+# 6. Launch Hyprland
+Hyprland
+```
+
+<br>
+
+## 🎨 Theming Your Wallpaper
+
+Noctra OS is designed to be re-themed in a single command. The `wall` alias makes this instant:
+
+```bash
+# From anywhere in your shell
+wall ~/Pictures/wallpapers/your-image.jpg
+```
+
+This runs `matugen image` which:
+1. Extracts a Material You color palette from the image
+2. Regenerates `waybar/colors.css`, `hypr/colors.conf`, `kitty/colors.conf`, `rofi/colors.rasi`, `btop/themes/noctra.theme`, `cava/config`, and `fastfetch/config.jsonc`
+3. You can then reload Waybar with `SUPER + R` or the `refresh` alias
+
+To fully apply including borders, restart Hyprland or run:
+```bash
+hyprctl reload && pkill -USR2 waybar
+```
+
+<br>
+
+## ⌨️ Keybindings
 
 | Action | Shortcut |
-| :--- | :---|
-| **Launch Terminal** | SUPER + Return |
-| **Close Window** | SUPER + Q |
-| **App Launcher** | SUPER + A |
-| **Toggle Floating** | SUPER + V |
-| **Reload Waybar** | SUPER + R | 
-| **Open Browser** | SUPER + B |
-| **Screenshot** | PrtSc |
+|:---|:---|
+| Launch Terminal | `SUPER + Enter` |
+| Kill Window | `SUPER + Q` |
+| App Launcher | `SUPER + A` |
+| File Manager | `SUPER + E` |
+| Firefox | `SUPER + B` |
+| Toggle Floating | `SUPER + V` |
+| Scratchpad Toggle | `SUPER + S` |
+| Move to Scratchpad | `SUPER + SHIFT + S` |
+| Screenshot (full) | `Print` |
+| Reload Waybar | `SUPER + R` |
+| Apply Wallpaper + Theme | `SUPER + SHIFT + W` |
+| Exit / Shutdown | `SUPER + M` |
+| Focus (Arrow Keys) | `SUPER + ←↑↓→` |
+| Move to Workspace | `SUPER + 1–0` |
+| Move Window to Workspace | `SUPER + SHIFT + 1–0` |
+| Volume Up / Down | `XF86AudioRaiseVolume / Lower` |
+| Mute | `XF86AudioMute` |
+| Brightness Up / Down | `XF86MonBrightnessUp / Down` |
+| Media Play/Pause/Skip | `XF86Audio*` |
+
+<br>
+
+## 🗂️ Full Directory Structure
+
+```
+dotfiles/
+├── .config/
+│   ├── hypr/               # Hyprland WM config (modular)
+│   ├── waybar/             # Bar config + Matugen CSS output
+│   ├── swaync/             # Notification center + scripts
+│   ├── kitty/              # Terminal config + colors
+│   ├── matugen/            # Color templates for all apps
+│   │   └── templates/      # .css/.conf/.jsonc templates
+│   ├── rofi/               # App launcher styles (7 types, 15 styles)
+│   ├── btop/               # System monitor + themed config
+│   ├── cava/               # Audio visualizer + shaders
+│   └── fastfetch/          # System fetch config + ASCII art
+└── zsh/
+    └── .zshrc              # Zsh config with lazy-loaded plugins
+```
+
+<br>
+
+## 🔧 Useful Aliases
+
+| Alias | Command | Description |
+|:---|:---|:---|
+| `wall <img>` | `matugen image` | Set wallpaper and regenerate all colors |
+| `refresh` | `pkill -USR2 waybar` | Reload Waybar in place |
+| `update` | `sudo pacman -Syu` | Full system upgrade |
+| `install` | `sudo pacman -S` | Install package |
+| `v` | `nvim` | Open Neovim |
+| `ls` | `eza --icons` | Better `ls` with icons |
+| `ll` | `eza -lah --icons` | Long listing with icons |
+
+<br>
+
+## 📝 Notes & Known Quirks
+
+- **Colors are auto-generated.** `~/.config/hypr/colors.conf`, `~/.config/waybar/colors.css`, and similar files are overwritten by Matugen — don't edit them manually.
+- **Monitor config** is set for `eDP-1` at `1920x1080@60` with `1.25` scaling. Edit `hypr/monitors.conf` to match your display.
+- **Wallpaper path** in the `SUPER + SHIFT + W` keybind is hardcoded. Edit `keybindings.conf` to point to your own wallpaper.
+- **AMD iGPU tuning:** Blur is set to 3 passes at size 6, shadows at render_power 1. If you have a dedicated GPU, you can increase these for a richer look.
+
+<br>
+
+## 🙏 Acknowledgements
+
+- [Hyprland](https://hyprland.org) — for making Wayland actually enjoyable
+- [Matugen](https://github.com/InioX/matugen) — for the Material You theming engine
+- [Waybar](https://github.com/Alexays/Waybar) — for being endlessly configurable
+- [r/unixporn](https://reddit.com/r/unixporn) — for the endless inspiration
+
+<br>
+
+---
+
+<div align="center">
+
+*Built with obsession on Arch Linux · Noctra OS by [Blaze](https://github.com/Blaze2216)*
+
+</div>
