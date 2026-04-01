@@ -4,12 +4,12 @@
 
 * {
     /* Map Matugen variables to Rofi properties */
-    bg-col:  #141218;
-    border-col: #948f99;
-    selected-col: #4f3d74;
-    text-col: #e7e0e8;
-    highlight-col: #d2bcfd;
-    on-selected-col: #eaddff;
+    bg-col:  #181215;
+    border-col: #9b8d94;
+    selected-col: #68355c;
+    text-col: #ecdfe5;
+    highlight-col: #f6b2e0;
+    on-selected-col: #ffd7f0;
 
     width: 600;
     font: "JetBrains Mono 12";

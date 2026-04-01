@@ -11,7 +11,9 @@
     "modules-left": [],
     "modules-center": [
         "hyprland/workspaces",
+        "idle_inhibitor",
         "clock",
+        "custom/recorder",
         "pulseaudio",
         "network",
         "battery",
@@ -89,5 +91,24 @@
         "on-click": "swaync-client -t -sw",
         "escape": true,
         "return-type": "json"   // future-proof if you want dynamic count later
+    },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "󰅶",   // Solid coffee cup when caffeine is ON
+            "deactivated": "󰾆" // Outline coffee cup when caffeine is OFF
+        },
+        "tooltip-format-activated": "Caffeine Mode: Active (Screen stays on)",
+        "tooltip-format-deactivated": "Caffeine Mode: Inactive (Normal power saving)"
+    },
+
+    "custom/recorder": {
+        "format": "{}",
+        "return-type": "json",
+        "interval": 1,
+        "exec": "~/.config/waybar/scripts/recorder-status.sh",
+        "on-click": "~/.config/hypr/scripts/screen-record.sh", // Same script stops it
+        "signal": 8
     }
 }

@@ -29,6 +29,7 @@ window#waybar {
 
 /* ── Shared module base ── */
 #workspaces,
+#idle_inhibitor,
 #clock,
 #pulseaudio,
 #network,
@@ -138,4 +139,14 @@ tooltip {
 
 tooltip label {
     color: @on_surface_variant;
+}
+
+/* ── Static Screen Recorder Indicator ── */
+#custom-recorder {
+    background: @error; /* Uses your Matugen Error/Red color */
+    color: @background;
+    padding: 0 12px;
+    margin: 4px;
+    border-radius: 12px;
+    font-weight: bold;
 }

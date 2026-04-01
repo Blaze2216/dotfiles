@@ -1,60 +1,87 @@
 {
     "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
     "logo": {
-        "source": "$HOME/.config/fastfetch/noctra.txt",
-        "color": {
-            "1": "#d2bcfd",
-            "2": "#f0b7c6"
-        },
+        "type": "kitty",
+        "source": "~/.config/fastfetch/images/",
+        "width": 28,
+        "height": 14,
         "padding": {
             "top": 2,
-            "right": 4
+            "left": 2,
+            "right": 2
         }
     },
     "display": {
-        "separator": " ➜  ",
-        "color": {
-            "keys": "#d2bcfd",
-            "title": "#f0b7c6"
-        }
+        "separator": "  " 
     },
     "modules": [
-        "title",
-        "separator",
+        "break",
+        // --- TOP OF THE LABEL BOX (Rounded) ---
+        {
+            "type": "custom",
+            "format": "╭──────────────────────╮",
+            "outputColor": "white"
+        },
+        {
+            "type": "title",
+            "key": "│    user             │",
+            "keyColor": "#f6b2e0", 
+            "format": "{1}" // {1} Native fastfetch user variable
+        },
+        {
+            "type": "title",
+            "key": "│    hname            │",
+            "keyColor": "#ffb4ab",
+            "format": "{2}" // {2} Native fastfetch hostname variable
+        },
         {
             "type": "os",
-            "key": "󰣇 OS ",
-            "keyColor": "#d2bcfd"
+            "key": "│  󰣇  distro           │",
+            "keyColor": "#dcbed0"
         },
         {
             "type": "kernel",
-            "key": "󰌢 KER",
-            "keyColor": "#cdc2db"
+            "key": "│    kernel           │",
+            "keyColor": "#f5b9a2"
         },
         {
-            "type": "wm",
-            "key": " WM ",
-            "keyColor": "#f0b7c6"
+            "type": "uptime",
+            "key": "│  󱎫  uptime           │",
+            "keyColor": "#f6b2e0"
         },
         {
-            "type": "terminal",
-            "key": " TRM",
-            "keyColor": "#d2bcfd"
+            "type": "shell",
+            "key": "│    shell            │",
+            "keyColor": "#ffb4ab"
         },
         {
-            "type": "cpu",
-            "key": " CPU",
-            "keyColor": "#cdc2db"
+            "type": "packages",
+            "key": "│  󰏖  pkgs             │",
+            "keyColor": "#f5b9a2"
         },
         {
             "type": "memory",
-            "key": "󰍛 MEM",
-            "keyColor": "#f0b7c6"
+            "key": "│  󰍛  memory           │",
+            "keyColor": "#dcbed0"
         },
-        "break",
+        // --- MIDDLE SEPARATOR ---
+        {
+            "type": "custom",
+            "format": "├──────────────────────┤",
+            "outputColor": "white"
+        },
         {
             "type": "colors",
+            "key": "│  󰏘  colors           │",
+            "keyColor": "#f6b2e0",
             "symbol": "circle"
-        }
+        },
+        // --- BOTTOM OF THE LABEL BOX (Rounded) ---
+        {
+            "type": "custom",
+            "format": "╰──────────────────────╯",
+            "outputColor": "white"
+        },
+        "break"
     ]
 }
