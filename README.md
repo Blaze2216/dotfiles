@@ -20,7 +20,7 @@
 
 <br>
 
-![Desktop Preview](.github/assets/preview-1.png)
+![Desktop Preview](https://github.com/Blaze2216/dotfiles/blob/main/assets/Screenshot_2026-04-01_21-35-54.png?raw=true)
 
 <br>
 
@@ -42,7 +42,7 @@ The result is a clean dark desktop that stays out of your way — with a Dynamic
 
 | Desktop | Notification Center |
 |:---:|:---:|
-| ![Preview 1](assets/2026-03-28_13-03-1774686420.png) | ![Preview 2](assets/2026-03-28_13-03-1774686478.png) |
+| ![Preview 1](https://github.com/Blaze2216/dotfiles/blob/main/assets/Screenshot_2026-04-01_21-35-54.png?raw=true) | ![Preview 2](https://github.com/Blaze2216/dotfiles/blob/main/assets/Screenshot_2026-04-01_21-35-54.png?raw=true) |
 
 </div>
 
