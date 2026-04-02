@@ -42,7 +42,7 @@ The result is a clean dark desktop that stays out of your way — with a Dynamic
 
 | Desktop | Notification Center |
 |:---:|:---:|
-| ![Preview 1](https://github.com/Blaze2216/dotfiles/blob/main/assets/Screenshot_2026-04-01_21-35-54.png?raw=true) | ![Preview 2](https://github.com/Blaze2216/dotfiles/blob/main/assets/Screenshot_2026-04-01_21-35-54.png?raw=true) |
+| ![Preview 1](https://github.com/Blaze2216/dotfiles/blob/main/assets/Screenshot_2026-04-01_21-37-14.png?raw=true) | ![Preview 2](https://github.com/Blaze2216/dotfiles/blob/main/assets/Screenshot_2026-04-01_21-38-01.png?raw=true) |
 
 </div>
 
@@ -172,7 +172,7 @@ Noctra OS is designed to be re-themed in a single command. The `wall` alias make
 
 ```bash
 # From anywhere in your shell
-wall ~/Pictures/wallpapers/your-image.jpg
+awww img ~/Pictures/wallpapers/your-image.jpg
 ```
 
 This runs `matugen image` which:
