@@ -25,7 +25,7 @@
         {
             "type": "title",
             "key": "│    user             │",
-            "keyColor": "#f6b2e0", 
+            "keyColor": "#fab1d9", 
             "format": "{1}" // {1} Native fastfetch user variable
         },
         {
@@ -37,17 +37,17 @@
         {
             "type": "os",
             "key": "│  󰣇  distro           │",
-            "keyColor": "#dcbed0"
+            "keyColor": "#dfbecd"
         },
         {
             "type": "kernel",
             "key": "│    kernel           │",
-            "keyColor": "#f5b9a2"
+            "keyColor": "#f3ba9d"
         },
         {
             "type": "uptime",
             "key": "│  󱎫  uptime           │",
-            "keyColor": "#f6b2e0"
+            "keyColor": "#fab1d9"
         },
         {
             "type": "shell",
@@ -57,12 +57,12 @@
         {
             "type": "packages",
             "key": "│  󰏖  pkgs             │",
-            "keyColor": "#f5b9a2"
+            "keyColor": "#f3ba9d"
         },
         {
             "type": "memory",
             "key": "│  󰍛  memory           │",
-            "keyColor": "#dcbed0"
+            "keyColor": "#dfbecd"
         },
         // --- MIDDLE SEPARATOR ---
         {
@@ -73,7 +73,7 @@
         {
             "type": "colors",
             "key": "│  󰏘  colors           │",
-            "keyColor": "#f6b2e0",
+            "keyColor": "#fab1d9",
             "symbol": "circle"
         },
         // --- BOTTOM OF THE LABEL BOX (Rounded) ---

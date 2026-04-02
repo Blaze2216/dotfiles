@@ -7,29 +7,29 @@
 
 /* ── Color tokens from Matugen ─────────────────────────── */
 
-@define-color primary                 #f6b2e0;
-@define-color on_primary              #4e1e44;
-@define-color primary_container       #68355c;
-@define-color on_primary_container    #ffd7f0;
-@define-color primary_fixed           #ffd7f0;
+@define-color primary                 #fab1d9;
+@define-color on_primary              #511d3e;
+@define-color primary_container       #6b3456;
+@define-color on_primary_container    #ffd8ea;
+@define-color primary_fixed           #ffd8ea;
 
-@define-color secondary               #dcbed0;
-@define-color on_secondary            #3e2a38;
-@define-color secondary_container     #56404f;
-@define-color on_secondary_container  #f9daec;
+@define-color secondary               #dfbecd;
+@define-color on_secondary            #402a36;
+@define-color secondary_container     #58404c;
+@define-color on_secondary_container  #fcd9e9;
 
-@define-color tertiary                #f5b9a2;
-@define-color on_tertiary             #4b2617;
-@define-color tertiary_container      #663c2b;
-@define-color on_tertiary_container   #ffdbce;
+@define-color tertiary                #f3ba9d;
+@define-color on_tertiary             #4a2713;
+@define-color tertiary_container      #653d27;
+@define-color on_tertiary_container   #ffdbca;
 
-@define-color surface                 #181215;
-@define-color on_surface              #ecdfe5;
-@define-color surface_variant         #4f444a;
-@define-color on_surface_variant      #d2c2ca;
+@define-color surface                 #181115;
+@define-color on_surface              #eddfe4;
+@define-color surface_variant         #504349;
+@define-color on_surface_variant      #d3c2c9;
 
-@define-color outline                 #9b8d94;
-@define-color outline_variant         #4f444a;
+@define-color outline                 #9c8d93;
+@define-color outline_variant         #504349;
 
 @define-color error                   #ffb4ab;
 @define-color on_error                #690005;
