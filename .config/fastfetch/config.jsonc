@@ -3,8 +3,8 @@
     "logo": {
         "type": "kitty",
         "source": "~/.config/fastfetch/images/",
-        "width": 28,
-        "height": 14,
+        // "width": 28,
+        "height": 18,
         "padding": {
             "top": 2,
             "left": 2,
@@ -25,7 +25,7 @@
         {
             "type": "title",
             "key": "│    user             │",
-            "keyColor": "#fab1d9", 
+            "keyColor": "#dcb9f8", 
             "format": "{1}" // {1} Native fastfetch user variable
         },
         {
@@ -37,17 +37,17 @@
         {
             "type": "os",
             "key": "│  󰣇  distro           │",
-            "keyColor": "#dfbecd"
+            "keyColor": "#d1c1d9"
         },
         {
             "type": "kernel",
             "key": "│    kernel           │",
-            "keyColor": "#f3ba9d"
+            "keyColor": "#f3b7bc"
         },
         {
             "type": "uptime",
             "key": "│  󱎫  uptime           │",
-            "keyColor": "#fab1d9"
+            "keyColor": "#dcb9f8"
         },
         {
             "type": "shell",
@@ -57,12 +57,12 @@
         {
             "type": "packages",
             "key": "│  󰏖  pkgs             │",
-            "keyColor": "#f3ba9d"
+            "keyColor": "#f3b7bc"
         },
         {
             "type": "memory",
             "key": "│  󰍛  memory           │",
-            "keyColor": "#dfbecd"
+            "keyColor": "#d1c1d9"
         },
         // --- MIDDLE SEPARATOR ---
         {
@@ -73,7 +73,7 @@
         {
             "type": "colors",
             "key": "│  󰏘  colors           │",
-            "keyColor": "#fab1d9",
+            "keyColor": "#dcb9f8",
             "symbol": "circle"
         },
         // --- BOTTOM OF THE LABEL BOX (Rounded) ---

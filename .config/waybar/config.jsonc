@@ -18,7 +18,8 @@
         "network",
         "battery",
         "tray",
-        "custom/notification"
+        "custom/notification",
+        "custom/power"
     ],
     "modules-right": [],
 
@@ -65,7 +66,8 @@
         "format-ethernet": "󰈀 {ifname}",
         "format-linked": "󰈀 {ifname} (No IP)",
         "format-disconnected": "󰤭 Disconnected",
-        "tooltip-format": "{ifname} via {gwaddr}\n{essid} {signalStrength}%"
+        "tooltip-format": "{ifname} via {gwaddr}\n{essid} {signalStrength}%",
+        "on-click": "kitty --class floating_nmtui -e nmtui"
     },
 
     "battery": {
@@ -76,7 +78,8 @@
         "format": "{icon} {capacity}%",
         "format-charging": "󰂄 {capacity}%",
         "format-plugged": " {capacity}%",
-        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "on-click": "~/.config/waybar/scripts/power-menu.sh"
     },
 
     "tray": {
@@ -110,5 +113,11 @@
         "exec": "~/.config/waybar/scripts/recorder-status.sh",
         "on-click": "~/.config/hypr/scripts/screen-record.sh", // Same script stops it
         "signal": 8
+    },
+
+    "custom/power": {
+        "format": "⏻ ",
+        "tooltip": false,
+        "on-click": "~/.config/waybar/scripts/sys-menu.sh"
     }
 }
